@@ -1,0 +1,93 @@
+Ebben a játékszabályban keveredni fognak a szabályok és a technikai részletek.
+Mindkettő kidolgozás alatt van, a részletek változhatnak, sorry.
+Ha a technikai része túl kemény, akkor megpróbáljuk kényelmesebbé tenni,
+de alapvetően olyan játékosokat várunk, akik segítséggel képesek megoldani a technikai részleteket.
+
+1. Játékba lépés
+
+  A játékba lépéshez ki kell alakítani a saját területedet.
+  - csinálj egy github accot magadnak   https://github.com/magwas/LiquidGame
+  - forkold le a https://github.com/magwas/LiquidGame repo-t
+  - clone-ozd le a saját repodat
+  
+  Utána létre kell hoznod magadat. A people alatt hozz létre egy file-t,
+  amiben legalább egy emailcím legyen, így:
+"""
+email: a.te@email.cim
+
+És bármit írhatsz magadról
+
+  
+"""
+  Hozd létre a homes/<usernév> nevű könyvtárat, ahol <usernév> a github-os felhasználóneved.
+  Azon belül pedig a "positions" nevű könyvtárat.
+  A "positions" könyvtárba olyan file-okat tegyél, amikben a világ egyes dolgairól szóló nézeteid vannak.
+
+  Amíg nem léptél be csoportba, addig a státuszod "idióta", és még nem játszol rendesen. Lásd a 4. pontot.
+
+2. lépések
+  A  lépések úgy történnek, hogy a https://github.com/magwas/LiquidGame repo-hoz egy merge requestet adsz fel
+  Ennek eredményeképpen a következők történhetnek:
+  Ha a saját file-jaidban (a homes/<usernév> alatt) változtatsz, azt elfogadjuk.
+  Ha olyan file-ban akarsz változtatni, amihez másnak is köze van, különféle folyamatok indulnak el,
+  amik gyakran szavazást tartalmaznak.
+  Történhet olyan, hogy a merge request technikailag nem jó (ütközik). Ezt majd feloldjuk valahogy, nagy valószínűséggel
+  megkérünk hogy az új master-hez képest indítsd el még egyszer.
+
+3. Erőforrások
+  Az erőforrások a resources könyvtár alatt vannak. Egy erőforrásnak vagy közvetlenül van tulajdonosa,
+  vagy egy másik erőforráson (amely ezt tartalmazza) kereszül. Ezeket az owner: és a containedby:
+  attribútumok mondják meg. Egy erőforrás lehet közös, vagy magtulajdon. Ezt a private: atttribútum jelöli.
+  Ezen kívül leírjuk hogy tulajdonképpen miről van szó. Lásd a Margitszigetet és a zenélő kutat mint példát.
+  
+  Erőforrást egyelőre bárki létrehozhat, csak azt nézzük hogy kiderül-e, kié, és köz- vagy magántulajdon.
+
+  Erőforrás tulajdonosának változtatása:
+  - ha egy tulajdonos van, aki személy, akkor ő megteheti.
+  - ha több tulajdonos van (beleértve a csoportokat is), akkor az összes tulajdonos szavaz.
+  - ha nem a tulajdonos akar rendelkezni, akkor azok a csoportok szavaznak, amelyek az összes tulajdonost tartalmazzák.
+     (A tulajdonosokat közvetlenül tartalmazó csoportok).
+    Így lehet privát tulajdonból köztulajdont csinálni.
+    Az ilyen szavazás ellen bármelyik tulajdonos fellebbezhet, ilyenkor az a csoport szavaz, amelyik minden tulajdonost tartalmaz,
+    és legalább egy szinttel az összes eredeti döntésben részt vevő csoport felett van.
+  Az erőforrásokhoz a tulajdonos gazdákat jelölhet ki, megadva a gazda teendőit. A gazda lemondhat erről a pozícióról.
+
+4. Csoportok
+
+  A játékosok csportokat hozhatnak létre. A csoportokban max. 4, min 2 játékos lehet (mert igazából tesztelünk. A játék éles
+  változatában ezek a számok a  Dunbar limit és annak a fele lesznek).
+  A játékosok egy csoportba léphetnek be, illetve átléphetnek másik csoportba. Ha ettől a csoport mérete limit fölé megy, akkor a csoport kettéosztódik, a tagokat
+  véletlenszerűen elosztva. A régi csoport által tulajdonolt erőforrásoknak mindkét csoport tulajdonosa lesz.
+  Ha a csoport mérete limit alá megy, a csoport feloszlik, erőforrásai az azt tartalmazó csoportra szállnak.
+  A csoportokat más, közvetlen játékosokkal nem rendelkező csoportok tartalmazzák. Így áttételesen minden játékos tagja a "world" nevű csoportnak.
+  A tartalmazó csoportokra is vonatkoznak a mérettel kapcslatos szabályok, de a tesztben 2 és 1 a limit.
+  A publikus erőforrások bármelyikéről dönthet úgy egy csoport, hogy azt birtokolja.
+  Ha egy erőforrás egy tartalmazó csoport minden csoportjának tulajdona, akkor a tartalmazó csoporthoz vándorol a tulajdonjog.
+
+
+5. szavazás
+  A szavazást condorcet módszerrel végezzük. A döntési alternatívákat beküldeni 3 napig lehet, utána 3 napig tart a szavazás.
+  A döntési alternatíva röviden írja le a döntés lényegét, és tartalmazzon egy linket arra a merge requestre, amelyet győzelem
+  esetén bemerge-ölünk a fő repóba.
+  Minden szavazásban van egy "a fentiek egyike sem" lehetőség. Ha az nyer, akkor nincs változtatás.
+  Szavazást mindig a saját csoportunkon belül indítunk. Ha egy olyan erőforrásról rendelkezik a szavazás, amely a hierarchiában
+  magasabban van, akkor először a saját csoport tagjai, majd a tartalmazó csoport tagjai, stb. Szavaznak arról, hogy továbbmenjen-e a javaslat, illetve közben adhatnak be döntési
+  alternatívát. Amikor felért a döntés és elfogadták, akkor végrehajtásra (merge) kerül.
+  A későbbiekben a jel/zaj viszony csökkentéséhez szükségessé válhat, hogy a magasabb szinteken a döntési alternatívát is szavazással lehessen feltolni.
+  Ez persze az időzítéseket is megváltoztatja.
+  A fellebbezésnél rögtön azon a csoporton belül történik a szavazás, ahová fellebbezni lehet.
+  
+  Amikor azt mondjuk, hogy "egy csoport szavaz", akkor azt értjük alatta, hogy minden olyan játékos, aki közvetlenül vagy közvetve tagja a csoportnak, egy szavazattal részt vehet a szavazáson.
+
+
+6. szabályok
+  A szabályok a "world" csoporthoz tartoznak.
+  A játék szervezői bármit módosíthatnak, mert ez teszt. Ennek az alábbi okai lehetnek.
+  - valami elromlott, és meg kell javítani
+  - technológiai újítás
+  - új ötlet van, és le kéne tesztelni a hozzá tartozó folyamat
+  Persze mindent megteszünk, hogy a játék tisztán folyjék.
+  Jelenleg a játék mögött emmilyen automatizmus nincsen, mindent kézzel csinálunk.
+  Emiatt a türelmet kérjük, és szívesen vesszük a nógatást és a segítséget.
+  A játék repojának hibajegykezelőjét bátran használjátok.
+
