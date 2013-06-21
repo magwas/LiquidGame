@@ -1,0 +1,56 @@
+Github account létrehozása:
+
+A https://github.com/ oldalon jobb oldalon tudsz regisztrálni. Add meg azt a felhasználónevet, amit szeretnél,
+az emailcímedet, meg egy jelszót amit szeretnél.
+
+Rögtön be is vagy jelentkezve. Ajánlott az email címedet validálni, így:
+Jobb felül kattints a felhasználónevedre. Ettől ha addig még nem volt ott, kicsit alatta megjelenik az, hogy
+"Edit your profile". Arra rákattintva a bal oldalon kattints az "Emails" feliratú téglalapra.
+Ettől jobb oldalon megjelenik az emailcímed. Kattints mellette a Verify gombra.
+Ettől fogsz kapni a megadott címre egy email-t, van benne egy URL. Azt keresd fel, és már le is van az emailcímed ellenőrizve.
+
+Érdemes lehet még megadnod az ssh kulcsodat, kényelmessé és biztonságossá teszi az életet.
+
+Most látogasd meg a https://github.com/magwas/LiquidGame címet. Jobb fennt van egy "Fork" felirat. Kattints rá.
+Gratulálunk, leforkoltad a játéktáblát!
+
+Innentől kezdve a git kliensedtől függ mit kell csinálnod. A továbbiak parancssoros git klienst feltételeznek.
+
+A saját gépeden clone-ozd le a repo-dat (a példában a 'testjoeh' felhasználó csinálja, írd be a saját repod valamelyik read-write
+url-jét.)
+
+   git clone git@github.com:testjoeh/LiquidGame.git
+
+add hozzá a játéktáblát remote-ként:
+
+   git remote add magwas git@github.com:magwas/LiquidGame.git
+
+
+Egy lépés:
+
+a lokális git repódban frissítsd a mastert a játéktáblával:
+
+  git checkout master 
+  git pull magwas
+
+
+csinálj egy branch-et a lépésnek persze ahelyett, hogy 'a-lepes-neve' találj ki valami okosabbat.
+
+  git branch a-lepes-neve
+
+
+Most változtass a játéktáblán, amit akarsz.
+Utána pedig csinálj egy rebase-t, és told fel:
+
+  git rebase magwas/master
+  git push
+
+ha ez megvan, akkor a github-on látnod kell az új branch-et. Pl a testjoe felhasználó testjoe-1 branch-e
+itt van (helyettesítsd be a saját felhasználóneved meg a branch nevét): https://github.com/testjoe/LiquidGame/tree/testjoe-1 
+
+Fönnt találsz egy "pull request" nevű gombot. Azt nyomd meg.
+Töltsd ki a request címét, írj a leírásba valamit ha nem elég egyértelmű a dolog, és nyomd meg a "Send pull request" gombot.
+
+Gratulálunk, megtettél egy lépést a játékban.
+
+Igen, ez elég bonyolult. Ha értesz hozzá, írhatsz rá scriptet, be fogom mergelni.

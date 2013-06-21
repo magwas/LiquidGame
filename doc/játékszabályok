@@ -6,9 +6,9 @@ de alapvetően olyan játékosokat várunk, akik segítséggel képesek megoldan
 1. Játékba lépés
 
   A játékba lépéshez ki kell alakítani a saját területedet.
-  - csinálj egy github accot magadnak   https://github.com/magwas/LiquidGame
+  - csinálj egy github accot magadnak
   - forkold le a https://github.com/magwas/LiquidGame repo-t
-  - clone-ozd le a saját repodat
+  Lásd kezdetek-HOWTO
   
   Utána létre kell hoznod magadat. A people alatt hozz létre egy file-t,
   amiben legalább egy emailcím legyen, így:
