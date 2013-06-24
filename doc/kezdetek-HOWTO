@@ -3,13 +3,7 @@ Github account létrehozása:
 A https://github.com/ oldalon jobb oldalon tudsz regisztrálni. Add meg azt a felhasználónevet, amit szeretnél,
 az emailcímedet, meg egy jelszót amit szeretnél.
 
-Rögtön be is vagy jelentkezve. Ajánlott az email címedet validálni, így:
-Jobb felül kattints a felhasználónevedre. Ettől ha addig még nem volt ott, kicsit alatta megjelenik az, hogy
-"Edit your profile". Arra rákattintva a bal oldalon kattints az "Emails" feliratú téglalapra.
-Ettől jobb oldalon megjelenik az emailcímed. Kattints mellette a Verify gombra.
-Ettől fogsz kapni a megadott címre egy email-t, van benne egy URL. Azt keresd fel, és már le is van az emailcímed ellenőrizve.
-
-Érdemes lehet még megadnod az ssh kulcsodat, kényelmessé és biztonságossá teszi az életet.
+Rögtön be is vagy jelentkezve. Az email címed validálásához fogsz kapni egy levelet, érdemes az abban lévő linkre kattintani.
 
 Most látogasd meg a https://github.com/magwas/LiquidGame címet. Jobb fennt van egy "Fork" felirat. Kattints rá.
 Gratulálunk, leforkoltad a játéktáblát!
