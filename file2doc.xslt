@@ -11,7 +11,6 @@
 
 
   <xsl:template match="*">
-  <xsl:message select="concat('foo=',name(),$objmap//map[@to=name(current())]/@from)"/>
     <xsl:choose>
       <xsl:when test="$objmap//map[@to=name(current())]">
         <element xsi:type="{$objmap//map[@to=name(current())]/@from}">
