@@ -38,7 +38,7 @@
         <xsl:message select="concat('link ',@name, my:path(.,concat(@name,'/',$this/@name,'.link')))"/>
         <xsl:result-document href="{my:path(.,concat(@name,'/',$this/@name,'.link'))}" omit-xml-declaration="yes">
           <link>
-            <xsl:attribute name="ref" select="my:path($this)"/>
+            <xsl:attribute name="ref" select="substring(my:path($this),2)"/>
           </link>
         </xsl:result-document>
       </xsl:for-each>
@@ -140,8 +140,8 @@
       <xsl:message select="concat('topath:',my:path(//element[@id=current()/@target]))"/>
       <xsl:result-document href="{concat('resourcehierarchy/',//element[@id=current()/@source]/@name, ' contains ', //element[@id=current()/@target]/@name)}" omit-xml-declaration="yes">
         <contains>
-          <xsl:attribute name="container" select="my:path(//element[@id=current()/@source])"/>
-          <xsl:attribute name="contained" select="my:path(//element[@id=current()/@target])"/>
+          <xsl:attribute name="container" select="substring(my:path(//element[@id=current()/@source]),2)"/>
+          <xsl:attribute name="contained" select="substring(my:path(//element[@id=current()/@target]),2)"/>
         </contains>
       </xsl:result-document>
     </xsl:for-each>
