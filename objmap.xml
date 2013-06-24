@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+    <objmap>
+      <map from="archimate:BusinessCollaboration" to="group" foldered="yes" relation="no"/>
+      <map from="archimate:BusinessActor" to="user" foldered="yes" relation="no"/>
+      <map from="archimate:BusinessObject" to="resource" foldered="no" relation="no"/>
+      <map from="archimate:Value" to="statement" foldered="no" relation="no"/>
+    </objmap>
+

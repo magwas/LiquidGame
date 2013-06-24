@@ -1,0 +1,6 @@
+<resource>
+   <bounds x="339" y="336"/>
+   <documentation>1000 pénz van benne
+</documentation>
+   <property key="private" value="yes"/>
+</resource>

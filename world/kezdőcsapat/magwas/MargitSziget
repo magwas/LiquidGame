@@ -1,0 +1,5 @@
+<resource>
+   <bounds x="732" y="324"/>
+   <documentation>A Margitsziget</documentation>
+   <property key="private" value="yes"/>
+</resource>
